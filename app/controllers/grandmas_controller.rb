@@ -1,0 +1,3 @@
+class GrandmasController < ApplicationController
+
+end
