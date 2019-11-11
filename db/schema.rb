@@ -10,10 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_11_164226) do
+ActiveRecord::Schema.define(version: 2019_11_11_170302) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "grandmas", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.float "lng"
+    t.float "lat"
+    t.bigint "user_id"
+    t.float "price"
+    t.text "address"
+    t.integer "age"
+    t.string "photo"
+    t.string "competence"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_grandmas_on_user_id"
+  end
+
+  create_table "transactions", force: :cascade do |t|
+    t.bigint "grandma_id"
+    t.bigint "user_id"
+    t.date "rentalDate"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["grandma_id"], name: "index_transactions_on_grandma_id"
+    t.index ["user_id"], name: "index_transactions_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -31,4 +57,7 @@ ActiveRecord::Schema.define(version: 2019_11_11_164226) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "grandmas", "users"
+  add_foreign_key "transactions", "grandmas"
+  add_foreign_key "transactions", "users"
 end
