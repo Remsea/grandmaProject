@@ -51,7 +51,3 @@ class GrandmasController < ApplicationController
   end
 end
 
-
-# User.where(weekly_subscriber: true).find_each do |user|
-#   NewsMailer.weekly(user).deliver_now
-# end
