@@ -1,9 +1,20 @@
 class GrandmasController < ApplicationController
-  validates :name, presence: true
-  # validates :description, presence: true
-  # validates :price, presence: true
-  # validates :address, presence: true
-  # validates :age, presence: true
-  # validates :photo, presence: true
-  # validates :competence, presence: true
+  def new
+    @grandma = Grandma.new
+  end
+
+  def create
+    @grandma = Grandma.new(params_grandma)
+    if @grandma.save
+      redirect_to grandma_path(@grandma)
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def params_grandma
+    params.require(:grandma).permit(:name, :description, :price, :address, :age, :competence)
+  end
 end
