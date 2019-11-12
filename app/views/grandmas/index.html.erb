@@ -5,6 +5,7 @@
 <div class="grid">
 <% @grandmas.each do |grandma|%>
       <div class="card-product">
+        <%= link_to '', grandma_path(grandma)  %>
         <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
         <div class="card-product-infos">
           <h2><%=grandma.name%></h2>
