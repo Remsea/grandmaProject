@@ -27,7 +27,7 @@ class GrandmasController < ApplicationController
   end
 
   def update
-    if @grandla.update(grandma_params)
+    if @grandma.update(params_grandma)
       redirect_to @grandma, notice: 'Your Grandma was successfully updated.'
     else
       render :edit
