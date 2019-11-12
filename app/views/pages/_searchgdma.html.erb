@@ -1,5 +1,5 @@
-<%= simple_form_for(@grandma) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :address %>
+<%= simple_form_for @grandma, :method => :get do |f| %>
+  <%= f.input :localisation, as: :loc %>
+  <%= f.input :competence %>
   <%= f.submit 'Search' %>
 <% end %>
