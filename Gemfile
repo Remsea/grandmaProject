@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.6.3'
 
+gem 'cloudinary', '~> 1.9.1'
 gem 'devise'
 
 gem 'bootsnap', require: false

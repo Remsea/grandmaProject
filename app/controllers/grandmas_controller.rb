@@ -4,7 +4,6 @@ class GrandmasController < ApplicationController
   end
 
   def index
-
   @grandmas = Grandma.where(competence: params[:grandma][:competence])
     # @grandmas = Grandma.all
   end
@@ -15,6 +14,7 @@ class GrandmasController < ApplicationController
 
   def create
     @grandma = Grandma.new(params_grandma)
+    @grandma.user = current_user
     if @grandma.save
       redirect_to grandma_path(@grandma)
     else
