@@ -1,6 +1,7 @@
 class Grandma < ApplicationRecord
   has_many :transactions
   belongs_to :user
+  belongs_to :competence
 
   validates :name, presence: true
   # validates :description, presence: true
