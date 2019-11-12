@@ -4,7 +4,9 @@ class GrandmasController < ApplicationController
   end
     
   def index
-    @grandmas = Grandma.all
+
+  @grandmas = Grandma.where(competence: params[:grandma][:competence])
+    # @grandmas = Grandma.all
   end
   
   def new
@@ -26,3 +28,8 @@ class GrandmasController < ApplicationController
     params.require(:grandma).permit(:name, :description, :price, :address, :age, :competence)
   end
 end
+
+
+# User.where(weekly_subscriber: true).find_each do |user|
+#   NewsMailer.weekly(user).deliver_now
+# end
