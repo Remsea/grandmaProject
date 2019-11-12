@@ -1,7 +1,80 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+puts 'Cleaning database...'
+Grandma.destroy_all
+User.destroy_all
+
+puts 'Creating user'
+toto = User.create!(
+  email: 'eva.guillen6@gmail.com',
+  password: "azertyuiop",
+  first_name: "Toto",
+  last_name: "Dupont"
+  )
+titi = User.create!(
+  email: 'a@a.com',
+  password: "azertyuiop",
+  first_name: "Titi",
+  last_name: "Ducret"
+  )
+
+puts 'Creating grandmas...'
+delphine = Grandma.create!(
+    name:        'Delphine',
+    description: 'Passionnée de couture, j ai 2 petits enfants et 5 arrières petits-enfants',
+    price:       '50',
+    address:     '5 rue Clotilde Bizolon 69002 Lyon',
+    age:         '90',
+    photo:       'https://unsplash.com/photos/MTg6nH8_lOY',
+    competence:  'Couture',
+    user:        toto,
+  )
+suzanne = Grandma.create!(
+    name:        'Suzanne',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    price:       '50',
+    address:     '5 rue Clotilde Bizolon 69002 Lyon',
+    age:         '82',
+    photo:       'https://unsplash.com/photos/y0I85D5QKvs',
+    competence:  'Cuisine',
+    user:        titi,
+  )
+yvette = Grandma.create!(
+    name:        'Yvette',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    price:       '50',
+    address:     '5 rue Clotilde Bizolon 69002 Lyon',
+    age:         '71',
+    photo:       'https://unsplash.com/photos/38KSErAzoVw',
+    competence:  'Jardinage',
+    user:        toto,
+  )
+simone = Grandma.create!(
+    name:        'Simone',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    price:       '50',
+    address:     '5 rue Clotilde Bizolon 69002 Lyon',
+    age:         '90',
+    photo:       'https://unsplash.com/photos/MTg6nH8_lOY',
+    competence:  'Tricot',
+    user:        titi,
+  )
+henriette = Grandma.create!(
+    name:        'Henriette',
+    description: 'Passionnée de couture, j ai 2 petits enfants et 5 arrières petits-enfants',
+    price:       '50',
+    address:     '5 rue Clotilde Bizolon 69002 Lyon',
+    age:         '72',
+    photo:       'https://unsplash.com/photos/jsQqiDYbsN0',
+    competence:  'Couture',
+    user:        toto,
+  )
+solange = Grandma.create!(
+    name:        'Solange',
+    description: 'Passionnée de couture, j ai 2 petits enfants et 5 arrières petits-enfants',
+    price:       '50',
+    address:     '5 rue Clotilde Bizolon 69002 Lyon',
+    age:         '85',
+    photo:       'https://unsplash.com/photos/MTg6nH8_lOY',
+    competence:  'Cuisine',
+    user:        titi,
+  )
+puts 'Finished!'
