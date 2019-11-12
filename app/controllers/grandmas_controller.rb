@@ -7,7 +7,7 @@ class GrandmasController < ApplicationController
   def index
 
 
-  @grandmas = Grandma.where(competence_id: params[:grandma][:competence_id])
+  @grandmas = Grandma.where(competence_id: params[:competence_id])
     # @grandmas = Grandma.all
   end
 

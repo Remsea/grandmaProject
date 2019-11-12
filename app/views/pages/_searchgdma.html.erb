@@ -1,8 +1,12 @@
-<%= simple_form_for @grandma, :method => :get do |f| %>
-  <%= f.input :localisation, as: :loc %>
-  <%= f.input :competence_id %>
-  <%= f.submit 'Search' %>
-<% end %>
 
-<!-- form_with -->
 <!-- fonction pour desactiver ajax (remote false) -->
+
+<%= form_with url: grandmas_path, method: :get, local: true do |form| %>
+<%= form.label :localisation %>
+ <%= form.text_field :localisation %>
+ <%= form.label :competence %>
+ <%= form.select(:competence_id, options_from_collection_for_select(Competence.all, :id, :name)) %>
+ <%= form.submit :search %>
+
+
+ <% end %>
