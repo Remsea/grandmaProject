@@ -18,10 +18,10 @@ titi = User.create!(
   )
 
 puts 'Creating competences'
-Competence.create(name: 'Couture')
-Competence.create(name: 'Cuisine')
-Competence.create(name: 'Jardinage')
-Competence.create(name: 'Tricot')
+couture = Competence.create(name: 'Couture')
+cuisine =Competence.create(name: 'Cuisine')
+jardinage = Competence.create(name: 'Jardinage')
+tricot = Competence.create(name: 'Tricot')
 Competence.create(name: 'Lecture')
 Competence.create(name: 'Massage')
 Competence.create(name: 'Poterie')
@@ -35,7 +35,7 @@ delphine = Grandma.create!(
     address:     '5 rue Clotilde Bizolon 69002 Lyon',
     age:         '90',
     photo:       'https://unsplash.com/photos/MTg6nH8_lOY',
-    competence_id:  '1',
+    competence_id: couture.id,
     user:        toto,
   )
 suzanne = Grandma.create!(
@@ -45,7 +45,7 @@ suzanne = Grandma.create!(
     address:     '5 rue Clotilde Bizolon 69002 Lyon',
     age:         '82',
     photo:       'https://unsplash.com/photos/y0I85D5QKvs',
-    competence_id:  '2',
+    competence_id: jardinage.id,
     user:        titi,
   )
 yvette = Grandma.create!(
@@ -55,7 +55,7 @@ yvette = Grandma.create!(
     address:     '5 rue Clotilde Bizolon 69002 Lyon',
     age:         '71',
     photo:       'https://unsplash.com/photos/38KSErAzoVw',
-    competence_id:  '3',
+    competence_id:  cuisine.id,
     user:        toto,
   )
 simone = Grandma.create!(
@@ -65,7 +65,7 @@ simone = Grandma.create!(
     address:     '5 rue Clotilde Bizolon 69002 Lyon',
     age:         '90',
     photo:       'https://unsplash.com/photos/MTg6nH8_lOY',
-    competence_id:  '4',
+    competence_id:  couture.id,
     user:        titi,
   )
 henriette = Grandma.create!(
@@ -75,7 +75,7 @@ henriette = Grandma.create!(
     address:     '5 rue Clotilde Bizolon 69002 Lyon',
     age:         '72',
     photo:       'https://unsplash.com/photos/jsQqiDYbsN0',
-    competence_id:  '1',
+    competence_id:  tricot.id,
     user:        toto,
   )
 solange = Grandma.create!(
@@ -85,7 +85,7 @@ solange = Grandma.create!(
     address:     '5 rue Clotilde Bizolon 69002 Lyon',
     age:         '85',
     photo:       'https://unsplash.com/photos/MTg6nH8_lOY',
-    competence_id:  '2',
+    competence_id:  cuisine.id,
     user:        titi,
   )
 puts 'Finished!'
