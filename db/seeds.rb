@@ -16,6 +16,16 @@ titi = User.create!(
   last_name: "Ducret"
   )
 
+puts 'Creating competences'
+Competence.create(name: 'Couture')
+Competence.create(name: 'Cuisine')
+Competence.create(name: 'Jardinage')
+Competence.create(name: 'Tricot')
+Competence.create(name: 'Lecture')
+Competence.create(name: 'Massage')
+Competence.create(name: 'Poterie')
+
+
 puts 'Creating grandmas...'
 delphine = Grandma.create!(
     name:        'Delphine',
@@ -24,7 +34,7 @@ delphine = Grandma.create!(
     address:     '5 rue Clotilde Bizolon 69002 Lyon',
     age:         '90',
     photo:       'https://unsplash.com/photos/MTg6nH8_lOY',
-    competence:  'Couture',
+    competence_id:  '1',
     user:        toto,
   )
 suzanne = Grandma.create!(
@@ -34,7 +44,7 @@ suzanne = Grandma.create!(
     address:     '5 rue Clotilde Bizolon 69002 Lyon',
     age:         '82',
     photo:       'https://unsplash.com/photos/y0I85D5QKvs',
-    competence:  'Cuisine',
+    competence_id:  '2',
     user:        titi,
   )
 yvette = Grandma.create!(
@@ -44,7 +54,7 @@ yvette = Grandma.create!(
     address:     '5 rue Clotilde Bizolon 69002 Lyon',
     age:         '71',
     photo:       'https://unsplash.com/photos/38KSErAzoVw',
-    competence:  'Jardinage',
+    competence_id:  '3',
     user:        toto,
   )
 simone = Grandma.create!(
@@ -54,7 +64,7 @@ simone = Grandma.create!(
     address:     '5 rue Clotilde Bizolon 69002 Lyon',
     age:         '90',
     photo:       'https://unsplash.com/photos/MTg6nH8_lOY',
-    competence:  'Tricot',
+    competence_id:  '4',
     user:        titi,
   )
 henriette = Grandma.create!(
@@ -64,7 +74,7 @@ henriette = Grandma.create!(
     address:     '5 rue Clotilde Bizolon 69002 Lyon',
     age:         '72',
     photo:       'https://unsplash.com/photos/jsQqiDYbsN0',
-    competence:  'Couture',
+    competence_id:  '1',
     user:        toto,
   )
 solange = Grandma.create!(
@@ -74,7 +84,7 @@ solange = Grandma.create!(
     address:     '5 rue Clotilde Bizolon 69002 Lyon',
     age:         '85',
     photo:       'https://unsplash.com/photos/MTg6nH8_lOY',
-    competence:  'Cuisine',
+    competence_id:  '2',
     user:        titi,
   )
 puts 'Finished!'

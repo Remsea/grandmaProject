@@ -10,10 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_11_170302) do
+ActiveRecord::Schema.define(version: 2019_11_12_142401) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "competences", force: :cascade do |t|
+    t.string "name", null: false
+  end
 
   create_table "grandmas", force: :cascade do |t|
     t.string "name"
@@ -25,9 +29,10 @@ ActiveRecord::Schema.define(version: 2019_11_11_170302) do
     t.text "address"
     t.integer "age"
     t.string "photo"
-    t.string "competence"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "competence_id"
+    t.index ["competence_id"], name: "index_grandmas_on_competence_id"
     t.index ["user_id"], name: "index_grandmas_on_user_id"
   end
 
@@ -57,6 +62,7 @@ ActiveRecord::Schema.define(version: 2019_11_11_170302) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "grandmas", "competences"
   add_foreign_key "grandmas", "users"
   add_foreign_key "transactions", "grandmas"
   add_foreign_key "transactions", "users"

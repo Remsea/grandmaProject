@@ -5,7 +5,7 @@ class GrandmasController < ApplicationController
 
   def index
 
-  @grandmas = Grandma.where(competence: params[:grandma][:competence])
+  @grandmas = Grandma.where(competence_id: params[:grandma][:competence_id])
     # @grandmas = Grandma.all
   end
 
@@ -25,7 +25,7 @@ class GrandmasController < ApplicationController
   private
 
   def params_grandma
-    params.require(:grandma).permit(:name, :description, :price, :address, :age, :competence)
+    params.require(:grandma).permit(:name, :description, :price, :address, :age, :competence_id)
   end
 end
 
