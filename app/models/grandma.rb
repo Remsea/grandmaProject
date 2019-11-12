@@ -1,7 +1,4 @@
 class Grandma < ApplicationRecord
-<<<<<<< HEAD
-  belongs_to :user
-=======
   has_many :transactions
   belongs_to :user
 
@@ -12,5 +9,4 @@ class Grandma < ApplicationRecord
   # validates :age, presence: true
   # validates :photo, presence: true
   # validates :competence, presence: true
->>>>>>> 36246a8358db423455763fc34ac35eac48c7988d
 end
