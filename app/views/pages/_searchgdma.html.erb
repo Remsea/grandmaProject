@@ -1,7 +1,7 @@
 <%= simple_form_for @grandma, :method => :get do |f| %>
   <%= f.input :localisation, as: :loc %>
   <%= f.input :competence_id %>
-  <%= f.submit 'Search' %>
+  <%= f.submit 'Search', class: "gmp-btn"%>
 <% end %>
 
 <!-- form_with -->
