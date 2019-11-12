@@ -1,6 +1,7 @@
 puts 'Cleaning database...'
 Grandma.destroy_all
 User.destroy_all
+Competence.destroy_all
 
 puts 'Creating user'
 toto = User.create!(
