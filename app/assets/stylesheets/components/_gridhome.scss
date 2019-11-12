@@ -5,13 +5,23 @@ grid-template-columns: repeat(3, 1fr);
 grid-gap: 4px;
 }
 
+// mise en forme pour etendre le lien a sur toute la carte
+
 .card-product {
+  position: relative;
   overflow: hidden;
   height: 120px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+    a {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
 }
 
 .card-product img {

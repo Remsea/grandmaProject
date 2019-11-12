@@ -1,0 +1,13 @@
+<h2>My Grandma ! 👵</h2>
+
+<h5>Les infos de ma super mémé</h5>
+
+<%= simple_form_for(@grandma) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.input :address %>
+  <%= f.input :age %>
+  <%= f.input :competence_id %>
+  <%= f.button :submit %>
+<% end %>

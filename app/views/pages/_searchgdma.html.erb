@@ -1,5 +1,8 @@
 <%= simple_form_for @grandma, :method => :get do |f| %>
   <%= f.input :localisation, as: :loc %>
-  <%= f.input :competence %>
+  <%= f.input :competence_id %>
   <%= f.submit 'Search' %>
 <% end %>
+
+<!-- form_with -->
+<!-- fonction pour desactiver ajax (remote false) -->
