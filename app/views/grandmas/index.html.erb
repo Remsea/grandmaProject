@@ -3,18 +3,14 @@
 <div class="container">
 <h1>Our Grandmas are waiting for you !</h1>
 <div class="grid">
-<%= @grandmas.each do |grandma|%>
+<% @grandmas.each do |grandma|%>
       <div class="card-product">
         <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
         <div class="card-product-infos">
-          <h2><%=@grandma.name%></h2>
-          <p><%=@Grandma.competence%></p>
+          <h2><%=grandma.name%></h2>
+          <p><%=grandma.competence%></p>
         </div>
       </div>
     <% end %>
   </div>
-
-
-
-
 </div>
