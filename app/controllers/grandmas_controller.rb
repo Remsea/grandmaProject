@@ -2,13 +2,13 @@ class GrandmasController < ApplicationController
   def show
     @grandma = Grandma.find(params[:id])
   end
-    
+
   def index
 
   @grandmas = Grandma.where(competence: params[:grandma][:competence])
     # @grandmas = Grandma.all
   end
-  
+
   def new
     @grandma = Grandma.new
   end
@@ -18,7 +18,7 @@ class GrandmasController < ApplicationController
     if @grandma.save
       redirect_to grandma_path(@grandma)
     else
-      render :new
+      render 'new'
     end
   end
 
