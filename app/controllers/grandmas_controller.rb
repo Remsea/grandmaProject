@@ -34,6 +34,12 @@ class GrandmasController < ApplicationController
     end
   end
 
+  def destroy
+    @grandma = Grandma.find(params[:id])
+    @grandma.destroy
+    redirect_to '/grandmas', notice: "#{@grandma.name} have been successfully destroyed"
+  end
+
   private
 
   def params_grandma
