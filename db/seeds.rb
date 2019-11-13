@@ -32,11 +32,11 @@ delphine = Grandma.create!(
     name:        'Delphine',
     description: 'Passionnée de couture, j ai 2 petits enfants et 5 arrières petits-enfants',
     price:       '50',
-    address:     '5 rue Clotilde Bizolon 69002 Lyon',
+    address:     '55 chemin du moulin 38330 Montbonnot',
     age:         '90',
     photo:       'https://unsplash.com/photos/MTg6nH8_lOY',
     competence_id: couture.id,
-    user:        toto,
+    user:        toto
   )
 suzanne = Grandma.create!(
     name:        'Suzanne',
@@ -52,7 +52,7 @@ yvette = Grandma.create!(
     name:        'Yvette',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     price:       '50',
-    address:     '5 rue Clotilde Bizolon 69002 Lyon',
+    address:     'Champs Elysée Paris',
     age:         '71',
     photo:       'https://unsplash.com/photos/38KSErAzoVw',
     competence_id:  cuisine.id,
@@ -62,7 +62,7 @@ simone = Grandma.create!(
     name:        'Simone',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     price:       '50',
-    address:     '5 rue Clotilde Bizolon 69002 Lyon',
+    address:     'Antigone montpellier',
     age:         '90',
     photo:       'https://unsplash.com/photos/MTg6nH8_lOY',
     competence_id:  couture.id,
