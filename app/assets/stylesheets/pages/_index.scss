@@ -3,13 +3,13 @@
 
 .main-container {
     display: flex;
+    padding: 10px;
 }
 
 
 .cards {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-gap: 16px;
-    flex-grow: 1;
     justify-items: center;
 }

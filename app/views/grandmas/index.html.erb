@@ -11,7 +11,7 @@
             </div>
             <div class="card-product">
             <%= link_to '', grandma_path(grandma)  %>
-            <%= image_tag grandma.photo.url(:thumnail) %>
+            <%= image_tag grandma.photo.url(:thumnail), class: 'avatar' %>
             </div>
           </div>
           <div class="more-info">
@@ -36,8 +36,8 @@
   <div class="map-container">
     <div
     id="map"
-    style="width: 60vh;
-    height: 400px;"
+    style="width: 100%;
+    height: 100vh;"
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
     ></div>
