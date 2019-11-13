@@ -5,10 +5,16 @@ class GrandmasController < ApplicationController
   end
 
   def index
+  @grandmas = Grandma.where(competence_id: params[:competence_id]).geocoded
+    # @grandmas = Grandma.geocoded #returns flats with coordinates
 
-
-  @grandmas = Grandma.where(competence_id: params[:competence_id])
-    # @grandmas = Grandma.all
+    @markers = @grandmas.map do |grandma|
+      {
+        lat: grandma.latitude,
+        lng: grandma.longitude
+      }
+      # @grandmas = Grandma.all
+    end
   end
 
   def new
