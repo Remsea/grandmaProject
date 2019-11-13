@@ -1,25 +1,12 @@
 <div class="grid">
-      <div class="card-product">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-        <div class="card-product-infos">
-          <h2>Grandma name</h2>
-          <p>Grandma competence <strong>relevant info</strong> only.</p>
-        </div>
-      </div>
+  <% @grandmas.each do |grandma|%>
     <div class="card-product">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+ <%= link_to '', grandma_path(grandma)  %>
+      <%= image_tag grandma.photo.url(:thumnail) %>
       <div class="card-product-infos">
-        <h2>Grandma name</h2>
-        <p>Grandma competence <strong>relevant info</strong> only.</p>
+        <h2><%=grandma.name%></h2>
+        <p><%=grandma.competence.to_s%></p>
       </div>
     </div>
-    <div class="card-product">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-      <div class="card-product-infos">
-        <h2>Grandma name</h2>
-        <p>Grandma competence <strong>relevant info</strong> only.</p>
-      </div>
-    </div>
-
-
+  <% end %>
 </div>
