@@ -9,3 +9,13 @@
   padding-left: 16px;
 }
 
+// app/assets/stylesheets/components/_map.scss
+.mapboxgl-popup {
+  max-width: 100px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+

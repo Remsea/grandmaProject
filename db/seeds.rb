@@ -18,6 +18,7 @@ titi = User.create!(
   )
 
 puts 'Creating competences'
+Competence.create(name: 'Toutes')
 couture = Competence.create(name: 'Couture')
 cuisine =Competence.create(name: 'Cuisine')
 jardinage = Competence.create(name: 'Jardinage')
@@ -76,7 +77,7 @@ henriette = Grandma.create!(
     name:        'Henriette',
     description: 'Passionnée de couture, j ai 2 petits enfants et 5 arrières petits-enfants',
     price:       '50',
-    address:     '5 rue Clotilde Bizolon 69002 Lyon',
+    address:     '8 rue Clotilde Bizolon 69002 Lyon',
     age:         '72',
     # remote_photo_url:       "https://images.unsplash.com/photo-1526860918836-81de4cae5681?ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80",
     photo:       Cloudinary::CarrierWave::StoredFile.new("image/upload/v1573647432/njfxgtirlywgbkshmrw6.jpg"),
@@ -87,7 +88,7 @@ solange = Grandma.create!(
     name:        'Solange',
     description: 'Passionnée de couture, j ai 2 petits enfants et 5 arrières petits-enfants',
     price:       '50',
-    address:     '5 rue Clotilde Bizolon 69002 Lyon',
+    address:     '20 rue Clotilde Bizolon 69002 Lyon',
     age:         '85',
     photo:       Cloudinary::CarrierWave::StoredFile.new("image/upload/v1573647591/sauhmsophclgyjrdp3ah.jpg"),
     # remote_photo_url:       "https://images.unsplash.com/photo-1556889882-73ea40694a98?ixlib=rb-1.2.1&auto=format&fit=crop&w=776&q=80",

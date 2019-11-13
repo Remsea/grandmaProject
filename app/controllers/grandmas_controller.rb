@@ -4,21 +4,40 @@ class GrandmasController < ApplicationController
     @grandma = Grandma.find(params[:id])
   end
 
-  def index
-  @grandmas = Grandma.where(competence_id: params[:competence_id]).geocoded
-    # @grandmas = Grandma.geocoded #returns flats with coordinates
+  def filtre_loc
+    Grandma.near(params[:localisation], 10)
+  end
 
+  def index
+    if Competence.find(params[:competence_id]).to_s == 'Toutes'
+      if params[:localisation].empty?
+        @grandmas = Grandma.all
+      else
+        @grandmas = filtre_loc
+      end
+    else
+      if params[:localisation].empty?
+        @grandmas = Grandma.where(competence_id: params[:competence_id])
+      else
+        @grandmas = filtre_loc.where(competence_id: params[:competence_id])
+      end
+      # @grandmas = Grandma.geocoded #returns flats with coordinates
+    end
+    @grandmas.geocoded
     @markers = @grandmas.map do |grandma|
       {
         lat: grandma.latitude,
-        lng: grandma.longitude
+        lng: grandma.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { grandma: grandma }),
+        image_url: helpers.asset_url('grandma.svg')
       }
-      # @grandmas = Grandma.all
     end
+    redirect_to root_path, notice: 'Sorry no grandma found :(' if @grandmas.empty?
   end
 
   def new
     @grandma = Grandma.new
+    @competences = Competence.where("name <> 'Toutes'")
   end
 
   def create
