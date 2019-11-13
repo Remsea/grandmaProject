@@ -37,6 +37,7 @@ class GrandmasController < ApplicationController
 
   def new
     @grandma = Grandma.new
+    @competences = Competence.where("name <> 'Toutes'")
   end
 
   def create
