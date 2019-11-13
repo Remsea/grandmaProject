@@ -4,7 +4,7 @@
 
 <%= form_with url: grandmas_path, method: :get, local: true do |form| %>
 <%= form.label :localisation %>
- <%= form.text_field :localisation %>
+ <%= form.text_field :localisation, id: 'flat_address' %>
  <%= form.label :competence %>
  <%= form.select(:competence_id, options_from_collection_for_select(Competence.all, :id, :name)) %>
  <%= form.submit :search %>
