@@ -95,4 +95,30 @@ solange = Grandma.create!(
     competence_id:  cuisine.id,
     user:        titi,
   )
+puts 'Creating transactions...'
+transaction1 = Transaction.create!(
+  grandma_id:    delphine.id
+  user_id:       toto.id
+  rentalDate:    '10.03.2019')
+
+  transaction2 = Transaction.create!(
+  grandma_id:    solange.id
+  user_id:       toto.id
+  rentalDate:    '08.08.2019')
+
+  transaction3 = Transaction.create!(
+  grandma_id:    henriette.id
+  user_id:       titi.id
+  rentalDate:    '03.02.2019')
+
+  transaction4 = Transaction.create!(
+  grandma_id:    simone.id
+  user_id:       titi.id
+  rentalDate:    '09.02.2019')
+
+  transaction5 = Transaction.create!(
+  grandma_id:    yvette.id
+  user_id:       titi.id
+  rentalDate:    '12.05.2019')
+
 puts 'Finished!'
