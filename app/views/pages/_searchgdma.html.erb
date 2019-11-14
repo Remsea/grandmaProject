@@ -1,13 +1,18 @@
 
 
 <!-- fonction pour desactiver ajax (remote false) -->
-
-<%= form_with url: grandmas_path, method: :get, local: true do |form| %>
-<%= form.label :localisation %>
- <%= form.text_field :localisation, id: 'flat_address' %>
- <%= form.label :competence %>
- <%= form.select(:competence_id, options_from_collection_for_select(Competence.all, :id, :name)) %>
- <%= form.submit :search %>
-
-
- <% end %>
+<div class="searchhome">
+  <div>
+    <%= form_with url: grandmas_path, method: :get, local: true do |form| %>
+    <%= form.label :localisation %>
+    <%= form.text_field :localisation, id: 'flat_address' %>
+  </div>
+  <div class="competence">
+    <%= form.label :competence, class: "block" %>
+    <%= form.select(:competence_id, options_from_collection_for_select(Competence.all, :id, :name), class: "block") %>
+  </div>
+  <div>
+      <%= form.submit :search, value: "Rechercher", class: "btn gmp-btn gmp-btn:hover" %>
+  </div>
+    <% end %>
+</div>

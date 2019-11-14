@@ -2,18 +2,20 @@
 
 <%= render 'navbar' %>
 
-<div class="container height100">
-<h1>Grandma Rental super website</h1>
-<p>Ready to use the power of an old and wise Grandma?</p>
+<div class="height100">
+  <div class="banner">
+    <h1>Grandma Rental super website</h1>
+    <p>Ready to use the power of an old and wise Grandma?</p>
+    <%= render 'searchgdma' %>
+  </div>
 
-<%= render 'searchgdma' %>
-
-<hr>
   <% if flash[:notice] %>
     <div class="alert alert-info"><%= flash[:notice] %></div>
   <% end %>
-
-<%= render 'cardsGrandma' %>
+  <div class="container">
+    <h2>Nos supers mémés à découvrir !</h2>
+    <%= render 'cardsGrandma' %>
+  </div>
 </div>
 
 <%= render 'footer' %>
