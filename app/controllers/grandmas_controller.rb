@@ -8,30 +8,62 @@ class GrandmasController < ApplicationController
     Grandma.near(params[:localisation], 10)
   end
 
-  def index
-    if Competence.find(params[:competence_id]).to_s == 'Toutes'
-      if params[:localisation].empty?
-        @grandmas = Grandma.all
+  def filtre_date
+    # where not ((t.id IS NOT NULL) AND (t.rentaldate >= '10/10/2019' and t.rentaldate <= '12/12/2019'))
+    sql_query = " \
+    (transactions.rentaldate >= :start_date \
+    AND transactions.rentaldate <= :end_date) \
+    AND (transactions.id IS NOT NULL) \
+    "
+    if params[:localisation].empty?
+      if Competence.find(params[:competence_id]).to_s == 'Toutes'
+        Grandma.left_outer_joins(:transactions)
+               .where.not(sql_query, start_date: params[:start_date], end_date: params[:end_date])
       else
-        @grandmas = filtre_loc
+        Grandma.left_outer_joins(:transactions)
+               .where.not(sql_query, start_date: params[:start_date], end_date: params[:end_date])
+               .where(competence_id: params[:competence_id])
       end
     else
-      if params[:localisation].empty?
-        @grandmas = Grandma.where(competence_id: params[:competence_id])
+      if Competence.find(params[:competence_id]).to_s == 'Toutes'
+        filtre_loc.left_outer_joins(:transactions)
+                  .where.not(sql_query, start_date: params[:start_date], end_date: params[:end_date])
       else
-        @grandmas = filtre_loc.where(competence_id: params[:competence_id])
+        filtre_loc.left_outer_joins(:transactions)
+                  .where.not(sql_query, start_date: params[:start_date], end_date: params[:end_date])
+                  .where(competence_id: params[:competence_id])
       end
-      # @grandmas = Grandma.geocoded #returns flats with coordinates
+    end
+  end
+
+  def index
+    if params[:start_date].present?
+      @grandmas = filtre_date
+      @date = [params[:start_date],params[:end_date]]
+    else
+      if Competence.find(params[:competence_id]).to_s == 'Toutes'
+        if params[:localisation].empty?
+          @grandmas = Grandma.all
+        else
+          @grandmas = filtre_loc
+        end
+      else
+        if params[:localisation].empty?
+          @grandmas = Grandma.where(competence_id: params[:competence_id])
+        else
+          @grandmas = filtre_loc.where(competence_id: params[:competence_id])
+        end
+      end
     end
     @grandmas.geocoded
-    @markers = @grandmas.map do |grandma|
-      {
-        lat: grandma.latitude,
-        lng: grandma.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { grandma: grandma }),
-        image_url: helpers.asset_url('grandma.svg')
-      }
-    end
+      @markers = @grandmas.map do |grandma|
+        {
+          lat: grandma.latitude,
+          lng: grandma.longitude,
+          infoWindow: render_to_string(partial: "info_window", locals: { grandma: grandma }),
+          image_url: helpers.asset_url('grandma.svg')
+        }
+      end
     redirect_to root_path, notice: 'Sorry no grandma found :(' if @grandmas.empty?
   end
 

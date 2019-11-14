@@ -1,6 +1,28 @@
 <%= render "pages/navbar" %>
 <h1 style="text-align: center; margin-bottom: 30px; margin-top: 30px;">Our Grandmas are waiting for you !</h1>
+
+
+
+
+<div class="container">
+  <div class="formdate">
+    <%= form_with url: grandmas_path, method: :get, local: true do |form| %>
+    <%= form.text_field :localisation, value: params[:localisation], type: :hidden %>
+    <%= form.text_field :competence_id, value: params[:competence_id], type: :hidden %>
+    <%= form.date_field :start_date, value: (@date[0] unless @date.nil?)  %>
+    <%= form.date_field :end_date, value: (@date[1] unless @date.nil?)%>
+    <%= form.submit :search %>
+    <% end %>
+      <%= form_with url: grandmas_path, method: :get, local: true do |form| %>
+    <%= form.text_field :localisation, value: params[:localisation], type: :hidden %>
+    <%= form.text_field :competence_id, value: params[:competence_id], type: :hidden %>
+    <%= form.submit :Reset %>
+    <% end %>
+    </div>
+</div>
 <div class="main-container">
+
+
   <div class="cards">
     <% @grandmas.each do |grandma|%>
       <div class="card">
