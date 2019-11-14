@@ -1,4 +1,4 @@
-.grid {
+.grid-home {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 16px;
@@ -8,11 +8,13 @@
 // mise en forme pour etendre le lien a sur toute la carte
 
 .card-product {
+  display:flex;
   position: relative;
   overflow: hidden;
   height: 120px;
-  text-align:center;
-  align-items: center;
+
+  // text-align:center;
+  // align-items: center;
     a {
     position: absolute;
     top: 0;

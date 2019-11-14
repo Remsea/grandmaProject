@@ -1,8 +1,8 @@
-<div class="grid">
+<div class="grid-home">
   <% @grandmas.each do |grandma|%>
     <div class="card-product">
  <%= link_to '', grandma_path(grandma)  %>
-      <%= image_tag grandma.photo.url(:thumnail) %>
+      <%= image_tag grandma.photo.url(:thumnail), class: 'avatar' %>
       <div class="card-product-infos">
         <h2><%=grandma.name%></h2>
         <p><%=grandma.competence.to_s%></p>
