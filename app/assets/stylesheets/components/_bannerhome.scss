@@ -1,8 +1,8 @@
 .banner {
-  background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url("https://res.cloudinary.com/dvzvqwrnz/image/upload/v1573729602/css/skiathos-greece-gUzsm9gqKBE-unsplash_wjhwhw.jpg");
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.3)),url("https://res.cloudinary.com/dvzvqwrnz/image/upload/v1573750650/css/meme_banner_y3cpsi.jpg");
   height: 400px;
   background-size: cover;
-  background-position: center;
+  background-position: right;
   padding: 50px 120px;
   margin-bottom: 30px;
 }
@@ -11,12 +11,12 @@
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
+  font-size: 40px;
   font-weight: bold;
 }
 
 .banner p {
-  font-size: 20px;
+  font-size: 24px;
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
