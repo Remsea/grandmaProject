@@ -3,16 +3,18 @@
 <div class="container">
   <div class="paragraph">
   <h2><%= @grandma.name %></h2>
-
-  <p>Age :  <%= @grandma.age %> ans</p>
-  <p><%= cl_image_tag @grandma.photo, height: 300, width: 400, crop: :fill %></p>
-  <p>Description :  <%= @grandma.description %></p>
-  <p>Competence : <%= @grandma.competence.to_s %></p>
-  <p>Address :  <%= @grandma.address %></p>
-  <p>Price :  <%= @grandma.price %>0 € /jours</p>
+    <p>Age :  <%= @grandma.age %> ans</p>
+    <p><%= cl_image_tag @grandma.photo, height: 300, width: 400, crop: :fill %></p>
+    <p>Description :  <%= @grandma.description %></p>
+    <p>Competence : <%= @grandma.competence.to_s %></p>
+    <p>Address :  <%= @grandma.address %></p>
+    <p>Price :  <%= @grandma.price %>0 € /jours</p>
   </div>
   <div class="hoover">
     <p class="gmp-btn gmp-btn:hover"><%= link_to "Update your Grandma", edit_grandma_path(@grandma)%></p>
     <p class="gmp-btn gmp-btn:hover"><%= link_to 'Destroy', grandma_path(@grandma), method: :delete, data: { confirm: 'Are you sure?' } %></p>
   </div>
 </div>
+
+
+<%= render '/pages/showcard' %>
