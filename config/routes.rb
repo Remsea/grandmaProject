@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :grandmas do
     resources :transactions, only: [:create]
   end
+
+  resources :users
 end
