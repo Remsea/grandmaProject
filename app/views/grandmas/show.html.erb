@@ -14,5 +14,13 @@
     <%= form.submit :mamieresa, class: "gmp-btn gmp-btn:hover" %>
     <% end %>
   </div>
+  <ul class="list-group mt-3 ml-3 w-50">
+    <li class="list-group-item list-group-item-primary">Dates réservées:</li>
+    <% @grandma.transactions.each do |transac| %>
+    <li class="list-group-item list-group-item-secondary"><%= transac.rentaldate.strftime("%d %B %Y") %></li>
+
+    <% end %>
+  </ul>
+  </div>
 </div>
 
