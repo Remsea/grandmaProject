@@ -101,26 +101,26 @@ puts 'Creating transactions...'
 transaction1 = Transaction.create!(
   grandma:      delphine,
   user:         toto,
-  rentalDate:    '10.03.2019')
+  rentaldate:    '10.03.2019')
 
   transaction2 = Transaction.create!(
   grandma:       solange,
   user:       toto,
-  rentalDate:    '08.08.2019')
+  rentaldate:    '08.08.2019')
 
   transaction3 = Transaction.create!(
   grandma:       henriette,
   user:          titi,
-  rentalDate:    '03.02.2019')
+  rentaldate:    '03.02.2019')
 
   transaction4 = Transaction.create!(
   grandma:       simone,
   user:          titi,
-  rentalDate:    '09.02.2019')
+  rentaldate:    '09.02.2019')
 
   transaction5 = Transaction.create!(
   grandma:       yvette,
   user:          titi,
-  rentalDate:    '12.05.2019')
+  rentaldate:    '12.05.2019')
 
 puts 'Finished!'
