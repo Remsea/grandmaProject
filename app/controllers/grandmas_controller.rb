@@ -51,6 +51,7 @@ class GrandmasController < ApplicationController
   end
 
   def edit
+    @competences = Competence.where("name <> 'Toutes'")
   end
 
   def update
