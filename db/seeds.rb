@@ -1,7 +1,9 @@
 puts 'Cleaning database...'
+Transaction.destroy_all
 Grandma.destroy_all
 User.destroy_all
 Competence.destroy_all
+
 
 puts 'Creating user'
 toto = User.create!(
@@ -49,7 +51,7 @@ suzanne = Grandma.create!(
     photo:       Cloudinary::CarrierWave::StoredFile.new("image/upload/v1573645922/tzedp2yiquftxsngsjde.jpg"),
     # remote_photo_url:       "https://images.unsplash.com/photo-1525951859549-32572c477ed8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=354&q=80",
     competence_id: jardinage.id,
-    user:        titi,
+    user:        titi
   )
 yvette = Grandma.create!(
     name:        'Yvette',
@@ -60,7 +62,7 @@ yvette = Grandma.create!(
     # remote_photo_url:       "https://images.unsplash.com/photo-1544179932-fadfa08128a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
     photo:       Cloudinary::CarrierWave::StoredFile.new("image/upload/v1573646703/xqrn8xwt5vgmjddhmywv.jpg"),
     competence_id:  cuisine.id,
-    user:        toto,
+    user:        toto
   )
 simone = Grandma.create!(
     name:        'Simone',
@@ -71,7 +73,7 @@ simone = Grandma.create!(
     # remote_photo_url:       "https://images.unsplash.com/photo-1547212371-eb5e6a4b590c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
     photo:       Cloudinary::CarrierWave::StoredFile.new("image/upload/v1573647055/slevqxe6jqu5sdmyyff2.jpg"),
     competence_id:  couture.id,
-    user:        titi,
+    user:        titi
   )
 henriette = Grandma.create!(
     name:        'Henriette',
@@ -82,7 +84,7 @@ henriette = Grandma.create!(
     # remote_photo_url:       "https://images.unsplash.com/photo-1526860918836-81de4cae5681?ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80",
     photo:       Cloudinary::CarrierWave::StoredFile.new("image/upload/v1573647432/njfxgtirlywgbkshmrw6.jpg"),
     competence_id:  tricot.id,
-    user:        toto,
+    user:        toto
   )
 solange = Grandma.create!(
     name:        'Solange',
@@ -93,6 +95,32 @@ solange = Grandma.create!(
     photo:       Cloudinary::CarrierWave::StoredFile.new("image/upload/v1573647591/sauhmsophclgyjrdp3ah.jpg"),
     # remote_photo_url:       "https://images.unsplash.com/photo-1556889882-73ea40694a98?ixlib=rb-1.2.1&auto=format&fit=crop&w=776&q=80",
     competence_id:  cuisine.id,
-    user:        titi,
+    user:        titi
   )
+puts 'Creating transactions...'
+transaction1 = Transaction.create!(
+  grandma:      delphine,
+  user:         toto,
+  rentalDate:    '10.03.2019')
+
+  transaction2 = Transaction.create!(
+  grandma:       solange,
+  user:       toto,
+  rentalDate:    '08.08.2019')
+
+  transaction3 = Transaction.create!(
+  grandma:       henriette,
+  user:          titi,
+  rentalDate:    '03.02.2019')
+
+  transaction4 = Transaction.create!(
+  grandma:       simone,
+  user:          titi,
+  rentalDate:    '09.02.2019')
+
+  transaction5 = Transaction.create!(
+  grandma:       yvette,
+  user:          titi,
+  rentalDate:    '12.05.2019')
+
 puts 'Finished!'
