@@ -1,10 +1,18 @@
 <%= render '/pages/navbar' %>
-
+<% if flash[:notice] %>
+    <div class="alert alert-success"><%= flash[:notice] %></div>
+  <% end %>
+<% if flash[:alert] %>
+    <div class="alert alert-danger"><%= flash[:alert] %></div>
+  <% end %>
 <%= render '/pages/showcard' %>
   <div class="hoover; container49">
     <p class="gmp-btn gmp-btn:hover"><%= link_to "Update your Grandma", edit_grandma_path(@grandma)%></p>
     <p class="gmp-btn gmp-btn:hover"><%= link_to 'Destroy', grandma_path(@grandma), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+    <%= form_with url: grandma_transactions_path(@grandma), method: :post, local: true do |form| %>
+    <%= form.date_field :rentaldate %>
+    <%= form.submit :mamieresa, class: "gmp-btn gmp-btn:hover" %>
+    <% end %>
   </div>
 </div>
-
 
