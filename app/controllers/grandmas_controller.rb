@@ -19,19 +19,23 @@ class GrandmasController < ApplicationController
       if Competence.find(params[:competence_id]).to_s == 'Toutes'
         Grandma.left_outer_joins(:transactions)
                .where.not(sql_query, start_date: params[:start_date], end_date: params[:end_date])
+               .distinct
       else
         Grandma.left_outer_joins(:transactions)
                .where.not(sql_query, start_date: params[:start_date], end_date: params[:end_date])
                .where(competence_id: params[:competence_id])
+               .distinct
       end
     else
       if Competence.find(params[:competence_id]).to_s == 'Toutes'
         filtre_loc.left_outer_joins(:transactions)
                   .where.not(sql_query, start_date: params[:start_date], end_date: params[:end_date])
+                  .distinct
       else
         filtre_loc.left_outer_joins(:transactions)
                   .where.not(sql_query, start_date: params[:start_date], end_date: params[:end_date])
                   .where(competence_id: params[:competence_id])
+                  .distinct
       end
     end
   end
@@ -39,7 +43,8 @@ class GrandmasController < ApplicationController
   def index
     if params[:start_date].present?
       @grandmas = filtre_date
-      @date = [params[:start_date],params[:end_date]]
+      @date = [params[:start_date], params[:end_date]]
+      byebug
     else
       if Competence.find(params[:competence_id]).to_s == 'Toutes'
         if params[:localisation].empty?
