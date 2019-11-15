@@ -33,7 +33,7 @@ Competence.create(name: 'Poterie')
 puts 'Creating grandmas...'
 delphine = Grandma.create!(
     name:        'Delphine',
-    description: 'Passionnée de couture, j ai 2 petits enfants et 5 arrières petits-enfants',
+    description: "Couturière de formation, avec plus de 50 ans d'expérience à mon actif, je serais heureuse de vous transmettre mes connaissances à ce sujet !",
     price:       '50',
     address:     '55 chemin du moulin 38330 Montbonnot',
     age:         '90',
@@ -44,8 +44,8 @@ delphine = Grandma.create!(
   )
 suzanne = Grandma.create!(
     name:        'Suzanne',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    price:       '50',
+    description: "Heureuse grand-mère de 5 adorables bambins, je vous propose de vous apprendre à bichonner votre jardin et vos plantes d'intérieur.",
+    price:       '45',
     address:     '5 rue Clotilde Bizolon 69002 Lyon',
     age:         '82',
     photo:       Cloudinary::CarrierWave::StoredFile.new("image/upload/v1573645922/tzedp2yiquftxsngsjde.jpg"),
@@ -55,10 +55,10 @@ suzanne = Grandma.create!(
   )
 yvette = Grandma.create!(
     name:        'Yvette',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    description: "Ancienne chef de cuisine dynamique et passionnée de gastronomie, je vous propose de partager mes connaissances pour éveiller les papilles de toute votre famille !",
     price:       '50',
     address:     'Champs Elysée Paris',
-    age:         '71',
+    age:         '67',
     # remote_photo_url:       "https://images.unsplash.com/photo-1544179932-fadfa08128a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
     photo:       Cloudinary::CarrierWave::StoredFile.new("image/upload/v1573646703/xqrn8xwt5vgmjddhmywv.jpg"),
     competence_id:  cuisine.id,
@@ -66,7 +66,7 @@ yvette = Grandma.create!(
   )
 simone = Grandma.create!(
     name:        'Simone',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    description: "Passionnée de couture depuis ma plus tendre enfance, je vous propose des cours en toute simplicité à mon domicile. Matériel fourni.",
     price:       '50',
     address:     'Antigone montpellier',
     age:         '90',
@@ -77,7 +77,7 @@ simone = Grandma.create!(
   )
 henriette = Grandma.create!(
     name:        'Henriette',
-    description: 'Passionnée de couture, j ai 2 petits enfants et 5 arrières petits-enfants',
+    description: "Pulls, gants, écharpes... Rejoignez-moi pour apprendre le tricot autour d'un thé et de bons petits gâteaux maison.",
     price:       '50',
     address:     '8 rue Clotilde Bizolon 69002 Lyon',
     age:         '72',
@@ -88,7 +88,7 @@ henriette = Grandma.create!(
   )
 solange = Grandma.create!(
     name:        'Solange',
-    description: 'Passionnée de couture, j ai 2 petits enfants et 5 arrières petits-enfants',
+    description: "Je vous propose des cours de cuisine afin d'apprendre à préparer les grands classiques de la gastronomie française. Je vous accueille à mon domicile, afin d'avoir tout le matériel nécessaire à disposition.",
     price:       '50',
     address:     '20 rue Clotilde Bizolon 69002 Lyon',
     age:         '85',
@@ -97,30 +97,74 @@ solange = Grandma.create!(
     competence_id:  cuisine.id,
     user:        titi
   )
+jeanne = Grandma.create!(
+    name:        'Jeanne',
+    description: "Chaussettes, gants, écharpes... Rejoignez-moi pour apprendre le tricot autour d'un thé et de bons petits gâteaux maison. Merci de venir avec votre laine, je m'occupe des aiguilles !",
+    price:       '30',
+    address:     '44 rue Mercière Lyon',
+    age:         '75',
+    photo:       Cloudinary::CarrierWave::StoredFile.new("image/upload/v1573828591/vbpzjyqebfame4alqkve.jpg"),
+    #remote_photo_url:       "https://images.unsplash.com/photo-1566616213894-2d4e1baee5d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80",
+    competence_id:  tricot.id,
+    user:        toto
+  )
+andree = Grandma.create!(
+    name:        'Andrée',
+    description: "Le tricot, c'est une grande aventure que je vous propose de découvrir en ma compagnie ! Avec du thé et de bons petits gâteaux maison. Merci de venir avec votre laine, je m'occupe des aiguilles !",
+    price:       '55',
+    address:     '9 rue du Mail Lyon',
+    age:         '82',
+    photo:       Cloudinary::CarrierWave::StoredFile.new("image/upload/v1573829086/bedf5njo8d9ojx2csazq.jpg"),
+    #remote_photo_url:       "https://images.unsplash.com/photo-1539527073261-80acb74db86e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
+    competence_id:  tricot.id,
+    user:        toto
+  )
+audette = Grandma.create!(
+    name:        'Audette',
+    description: "Pulls, gants, écharpes... Rejoignez-moi pour apprendre le tricot autour d'un thé et de bons petits gâteaux maison. Merci de venir avec votre laine, je m'occupe des aiguilles !",
+    price:       '55',
+    address:     '20 rue des Capucins Lyon',
+    age:         '69',
+    photo:       Cloudinary::CarrierWave::StoredFile.new("image/upload/v1573829519/ouyqovvuvdwsrroyuv5e.jpg"),
+    #remote_photo_url:       "https://images.unsplash.com/photo-1422015347944-9dd46d16bd0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
+    competence_id:  tricot.id,
+    user:        toto
+  )
+
 puts 'Creating transactions...'
 transaction1 = Transaction.create!(
   grandma:      delphine,
   user:         toto,
-  rentaldate:    '10.03.2019')
+  rentaldate:    '10.03.2020')
 
   transaction2 = Transaction.create!(
   grandma:       solange,
-  user:       toto,
-  rentaldate:    '08.08.2019')
+  user:         toto,
+  rentaldate:    '08.08.2020')
 
   transaction3 = Transaction.create!(
   grandma:       henriette,
   user:          titi,
-  rentaldate:    '03.02.2019')
+  rentaldate:    '03.02.2020')
 
   transaction4 = Transaction.create!(
   grandma:       simone,
   user:          titi,
-  rentaldate:    '09.02.2019')
+  rentaldate:    '09.02.2020')
 
   transaction5 = Transaction.create!(
   grandma:       yvette,
   user:          titi,
-  rentaldate:    '12.05.2019')
+  rentaldate:    '12.05.2020')
+
+  transaction6 = Transaction.create!(
+  grandma:       jeanne,
+  user:          titi,
+  rentaldate:    '17.11.2019')
+
+  transaction7 = Transaction.create!(
+  grandma:       andree,
+  user:          titi,
+  rentaldate:    '17.11.2019')
 
 puts 'Finished!'
