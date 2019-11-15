@@ -84,7 +84,7 @@ henriette = Grandma.create!(
     # remote_photo_url:       "https://images.unsplash.com/photo-1526860918836-81de4cae5681?ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80",
     photo:       Cloudinary::CarrierWave::StoredFile.new("image/upload/v1573647432/njfxgtirlywgbkshmrw6.jpg"),
     competence_id:  tricot.id,
-    user:        toto
+    user:        titi
   )
 solange = Grandma.create!(
     name:        'Solange',
@@ -128,7 +128,7 @@ audette = Grandma.create!(
     photo:       Cloudinary::CarrierWave::StoredFile.new("image/upload/v1573829519/ouyqovvuvdwsrroyuv5e.jpg"),
     #remote_photo_url:       "https://images.unsplash.com/photo-1422015347944-9dd46d16bd0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
     competence_id:  tricot.id,
-    user:        toto
+    user:        titi
   )
 
 puts 'Creating transactions...'
