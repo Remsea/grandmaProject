@@ -1,0 +1,19 @@
+.grid {
+display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2px;
+    flex-grow: 1;
+}
+
+.reservation-infos {
+  margin: 5em auto;
+}
+
+.book-date {
+  display: flex;
+  align-items: center;
+}
+
+.planning {
+  margin-top: 20px;
+}
