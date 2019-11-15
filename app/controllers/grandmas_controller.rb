@@ -68,7 +68,7 @@ class GrandmasController < ApplicationController
           image_url: helpers.asset_url('grandma.svg')
         }
       end
-    redirect_to root_path, notice: 'Sorry no grandma found :(' if @grandmas.empty?
+    redirect_to root_path, notice: 'Sorry no grandma found 😔' if @grandmas.empty?
   end
 
   def new
@@ -101,7 +101,7 @@ class GrandmasController < ApplicationController
   def destroy
     @grandma = Grandma.find(params[:id])
     @grandma.destroy
-    redirect_to '/', notice: "#{@grandma.name} have been successfully destroyed"
+    redirect_to '/', notice: "#{@grandma.name} has been successfully destroyed 🤪"
   end
 
   private

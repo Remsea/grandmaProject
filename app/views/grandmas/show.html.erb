@@ -21,7 +21,10 @@
   <div class="planning">
     <!-- <ul class="list-group md-3 ml-3 w-50"> -->
       <ul class="list-group">
-      <li class="list-group-item list-group-item-dark">Déso, mémé est déjà bookée les :</li>
+        <% nbtransac = @grandma.transactions.select{|transac| transac.rentaldate >= Date.current }.size %>
+      <% if nbtransac != 0 %>
+      <li class="list-group-item list-group-item-dark">Yeee mémé est bookée sur <%= pluralize(nbtransac,'date', plural: 'dates') %> :</li>
+      <% end %>
       <% @grandma.transactions.each do |transac| %>
       <% if transac.rentaldate >= Date.current %>
         <li class="list-group-item list-group-item-secondary"><%= transac.rentaldate.strftime("%d %B %Y") %></li>
