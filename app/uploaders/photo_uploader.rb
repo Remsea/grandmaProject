@@ -14,7 +14,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
 
   version :bright_face do
     cloudinary_transformation effect: "brightness:30", radius: 0,
-      width: 45, height: 45, crop: :thumb, gravity: :face
+      width: 100, height: 100, crop: :thumb, gravity: :face
   end
 
   IDENTIFIERS = ["image/upload/v1573645921/l1ymj0tsdh3bummur0fw.jpg", "image/upload/v1573645922/tzedp2yiquftxsngsjde.jpg", "image/upload/v1573646703/xqrn8xwt5vgmjddhmywv.jpg", "image/upload/v1573647055/slevqxe6jqu5sdmyyff2.jpg", "image/upload/v1573647432/njfxgtirlywgbkshmrw6.jpg", "image/upload/v1573647591/sauhmsophclgyjrdp3ah.jpg"]
