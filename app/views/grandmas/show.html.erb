@@ -23,7 +23,9 @@
       <ul class="list-group">
       <li class="list-group-item list-group-item-dark">Déso, mémé est déjà bookée les :</li>
       <% @grandma.transactions.each do |transac| %>
-      <li class="list-group-item list-group-item-secondary"><%= transac.rentaldate.strftime("%d %B %Y") %></li>
+      <% if transac.rentaldate >= Date.current %>
+        <li class="list-group-item list-group-item-secondary"><%= transac.rentaldate.strftime("%d %B %Y") %></li>
+      <% end %>
       <% end %>
     </ul>
   </div>
