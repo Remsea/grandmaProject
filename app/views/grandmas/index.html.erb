@@ -6,17 +6,17 @@
 
 <div class="container">
   <div class="formdate">
-    <%= form_with url: grandmas_path, method: :get, local: true do |form| %>
+    <%= form_with url: grandmas_path, method: :get, local: true, class: 'formcenter' do |form| %>
     <%= form.text_field :localisation, value: params[:localisation], type: :hidden %>
     <%= form.text_field :competence_id, value: params[:competence_id], type: :hidden %>
     <%= form.date_field :start_date, value: (@date[0] unless @date.nil?)  %>
-    <%= form.date_field :end_date, value: (@date[1] unless @date.nil?)%>
-    <%= form.submit :search %>
+    <%= form.date_field :end_date, class: 'ml-1', value: (@date[1] unless @date.nil?)%>
+    <%= form.submit :search, class: 'gmp-btn m-0 ml-2' %>
     <% end %>
       <%= form_with url: grandmas_path, method: :get, local: true do |form| %>
     <%= form.text_field :localisation, value: params[:localisation], type: :hidden %>
     <%= form.text_field :competence_id, value: params[:competence_id], type: :hidden %>
-    <%= form.submit :Reset %>
+    <%= form.submit :Reset, class: 'gmp-btn m-0 ml-2' %>
     <% end %>
     </div>
 </div>
