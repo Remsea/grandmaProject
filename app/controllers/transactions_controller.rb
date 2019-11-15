@@ -5,19 +5,24 @@ class TransactionsController < ApplicationController
     @transactions.map! do |date|
       date.strftime("%d %m %y")
     end
-    @test = @transactions.include?(Date.parse(params[:rentaldate]).strftime("%d %m %y")) unless @transactions.nil?
-    if @test
-      flash.now[:alert] = 'Date déjà prise pour Mamie sorry'
+    if params[:rentaldate] == ''
+      flash.now[:alert] = 'Dates vides, merci de saisir une date'
       render 'grandmas/show'
     else
-      @transaction = Transaction.new(params_transaction)
-      @transaction.user = current_user
-      @transaction.grandma = @grandma
-      if @transaction.save
-        redirect_to grandma_path(@grandma), notice: "Mamie bien réservée!"
-      else
-        flash.now[:alert] = @transaction.errors.full_messages.to_s
+      @test = @transactions.include?(Date.parse(params[:rentaldate]).strftime("%d %m %y")) unless @transactions.nil?
+      if @test
+        flash.now[:alert] = 'Date déjà prise pour Mamie sorry'
         render 'grandmas/show'
+      else
+        @transaction = Transaction.new(params_transaction)
+        @transaction.user = current_user
+        @transaction.grandma = @grandma
+        if @transaction.save
+          redirect_to grandma_path(@grandma), notice: "Mamie bien réservée!"
+        else
+          flash.now[:alert] = @transaction.errors.full_messages.to_s
+          render 'grandmas/show'
+        end
       end
     end
   end

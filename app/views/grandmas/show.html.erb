@@ -1,4 +1,6 @@
+<div class="d-flex flex-column mheight100">
 <%= render '/pages/navbar' %>
+  <div class="height100">
 <% if flash[:notice] %>
     <div class="alert alert-success"><%= flash[:notice] %></div>
   <% end %>
@@ -12,6 +14,7 @@
   <div class="book-date">
     <%= form_with url: grandma_transactions_path(@grandma), method: :post, local: true do |form| %>
     <%= form.date_field :rentaldate %>
+
     <p><%= form.submit :mamieresa, value: "Réserver", class: "btn gmp-btn gmp-btn:hover" %></p>
   <% end %>
   </div>
@@ -40,5 +43,4 @@
 
   </div>
 </div>
-
-
+</div>
