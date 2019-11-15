@@ -11,7 +11,7 @@
     <p class="gmp-btn gmp-btn:hover"><%= link_to 'Destroy', grandma_path(@grandma), method: :delete, data: { confirm: 'Are you sure?' } %></p>
     <%= form_with url: grandma_transactions_path(@grandma), method: :post, local: true do |form| %>
     <%= form.date_field :rentaldate %>
-    <%= form.submit :mamieresa, class: "gmp-btn gmp-btn:hover" %>
+    <%= form.submit :Mamieresa, class: "gmp-btn gmp-btn:hover" %>
     <% end %>
   </div>
   <ul class="list-group mt-3 ml-3 w-50">
