@@ -6,7 +6,7 @@ class TransactionsController < ApplicationController
       date.strftime("%d %m %y")
     end
     if (params[:rentaldate] == '') || (Date.parse(params[:rentaldate]) < Date.current)
-      flash.now[:alert] = 'Dates vides ou dans le passée!'
+      flash.now[:alert] = 'Dates vides ou dans le passée! 🧐'
       render 'grandmas/show'
     else
       @test = @transactions.include?(Date.parse(params[:rentaldate]).strftime("%d %m %y")) unless @transactions.nil?
