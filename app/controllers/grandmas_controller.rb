@@ -44,7 +44,6 @@ class GrandmasController < ApplicationController
     if params[:start_date].present?
       @grandmas = filtre_date
       @date = [params[:start_date], params[:end_date]]
-      byebug
     else
       if Competence.find(params[:competence_id]).to_s == 'Toutes'
         if params[:localisation].empty?
