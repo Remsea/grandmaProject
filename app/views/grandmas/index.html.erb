@@ -4,7 +4,8 @@
 
 
 
-<div class="container">
+<div class="container-fluid">
+<div class="col-12 col-lg-8">
   <div class="formdate">
     <%= form_with url: grandmas_path, method: :get, local: true, class: 'formcenter' do |form| %>
     <%= form.text_field :localisation, value: params[:localisation], type: :hidden %>
@@ -18,50 +19,57 @@
     <%= form.text_field :competence_id, value: params[:competence_id], type: :hidden %>
     <%= form.submit :Reset, class: 'gmp-btn m-0 ml-2' %>
     <% end %>
-    </div>
+  </div>
 </div>
-<div class="main-container">
+<div class="col-12 col-lg-4"></div>
+</div>
 
-
-  <div class="cards">
-    <% @grandmas.each do |grandma|%>
-      <div class="card">
-        <div class="additional">
-          <div class="user-card">
-            <div class="points center">
-             <%= grandma.age %> ans
-            </div>
-            <div class="card-product">
-            <%= link_to '', grandma_path(grandma)  %>
-            <%= image_tag grandma.photo.url(:thumnail), class: 'avatar' %>
-            </div>
-          </div>
-          <div class="more-info">
-            <h1><%= grandma.name %></h1>
-            <div class="coords">
-            </div>
-            <div class="stats">
-              <div>
-                <i class="fa fa-group"></i>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 col-lg-8">
+      <div class="cards">
+        <% @grandmas.each do |grandma|%>
+          <div class="card">
+            <div class="additional">
+              <div class="user-card">
+                <div class="points center">
+                 <%= grandma.age %> ans
+                </div>
+                <div class="card-product">
+                <%= link_to '', grandma_path(grandma)  %>
+                <%= image_tag grandma.photo.url(:thumnail), class: 'avatar' %>
+                </div>
+              </div>
+              <div class="more-info">
+                <h1><%= grandma.name %></h1>
+                <div class="coords">
+                </div>
+                <div class="stats">
+                  <div>
+                    <i class="fa fa-group"></i>
+                  </div>
+                </div>
               </div>
             </div>
+            <div class="general">
+              <h1><%= grandma.name %></h1>
+              <p>Competence : <%= grandma.competence.to_s %></p>
+              <p>Price :  <%= grandma.price %>0 € /jours</p>
+            </div>
           </div>
-        </div>
-        <div class="general">
-          <h1><%= grandma.name %></h1>
-          <p>Competence : <%= grandma.competence.to_s %></p>
-          <p>Price :  <%= grandma.price %>0 € /jours</p>
-        </div>
+        <% end %>
       </div>
-    <% end %>
-  </div>
-  <div class="map-container">
-    <div
-    id="map"
-    style="width: 100%;
-    height: 100vh;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-    ></div>
+    </div>
+    <div class="col-12 col-lg-4">
+      <div class="map-container">
+        <div
+        id="map"
+        style="width: 100%;
+        height: 100vh;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+        ></div>
+      </div>
+    </div>
   </div>
 </div>
