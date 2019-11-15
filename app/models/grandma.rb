@@ -1,5 +1,5 @@
 class Grandma < ApplicationRecord
-  has_many :transactions
+  has_many :transactions, dependent: :destroy
   belongs_to :user
   belongs_to :competence
 
