@@ -4,7 +4,6 @@
   text-decoration: none;
   background-color: #E87268;
   box-shadow: 0 2px 14px rgba(126,87,88,.1), 0 3px 6px rgba(0,0,0,.08);
-  color: #ffffff;
   letter-spacing: 0.25px;
   font-weight: 700;
   justify-content: center;
@@ -12,6 +11,11 @@
   cursor: pointer;
   transition: all .15s ease;
   margin-top: 20px;
+  color: #167FFB;
+    a {
+      text-decoration: none;
+
+    }
 }
 
 .gmp-btn:hover {
