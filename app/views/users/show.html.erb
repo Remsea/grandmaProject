@@ -1,1 +1,62 @@
-show.html.erb
+<%= render '/pages/navbar' %>
+
+<div class="main-container">
+
+  <div class="sidebar">
+    <h1>Mon profil</h1>
+    <div><img class="avatar avatar-large" src="https://kitt.lewagon.com/placeholder/users/ssaunier" alt=""></div>
+    <div>
+      <div class="profilcontainer">
+      <p><%= @user.first_name %></p>
+      </div>
+      <div class="profilcontainer">
+      <p><%= @user.last_name %></p>
+      </div>
+      <div class="profilcontainer">
+      <p><%= @user.email %></p>
+      </div>
+      <div class="modifier">
+      <a href="" class="gmp-btn">Modifier</a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="reservationdiv">
+      <h1>Mes réservations</h1>
+    </div>
+    <div class="row">
+      <div class="cards col-6">
+        <% @transaction.each do |transaction|%>
+        <div class="card">
+          <div class="additional">
+            <div class="user-card">
+              <div class="points center">
+               <%= transaction.grandma.age %> ans
+             </div>
+             <div class="card-product">
+              <%= link_to '', grandma_path(transaction.grandma_id)  %>
+              <%= image_tag transaction.grandma.photo.url(:thumnail), class: 'avatar' %>
+            </div>
+          </div>
+          <div class="more-info">
+            <h1><%= transaction.grandma.name %></h1>
+            <h2 style="color: white">Votre réservation est prévue le :<%= transaction.rentaldate %></h2>
+            <div class="stats">
+              <div>
+                <i class="fa fa-group"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="general">
+          <h1><%= transaction.grandma.name %></h1>
+          <p>Competence : <%= transaction.grandma.competence.to_s %></p>
+          <p>Price :  <%= transaction.grandma.price %>0 € /jours</p>
+        </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+

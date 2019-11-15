@@ -27,6 +27,10 @@ class TransactionsController < ApplicationController
     end
   end
 
+  def show
+    @transaction = Transaction.find(params_transaction)
+  end
+
   private
 
   def params_transaction
